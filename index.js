@@ -12,4 +12,8 @@ app.listen(port, () => {
   console.log(`Listening port: ${port}`)
 })
 
-mongoose.connect('mongodb://localhost/carsdb', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/carsdb', {useNewUrlParser: true, useUnifiedTopology: true})
+  .then(() => {
+    console.log('Connected to mongodb')
+  })
+  .catch(error => console.log('Cant connected to DB'))
