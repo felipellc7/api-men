@@ -58,5 +58,11 @@ router.put('/:id', [
   res.status(204).send()
 })
 
+router.delete('/:id', async (req, res) => {
+  const car = await Car.findByIdAndDelete(req.params.id)
+  if (!car) return res.status(404).send('Car not found')
+  res.status(200).send('car removed')
+})
+
 
 module.exports = router;
