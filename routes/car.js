@@ -35,3 +35,5 @@ router.post('/', [
   const result = await car.save()
   res.status(201).send(result)
 })
+
+module.exports = router;
